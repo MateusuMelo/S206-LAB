@@ -1,0 +1,157 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-06-03T23:01:40.558Z",
+    "end": "2024-06-03T23:01:57.776Z",
+    "duration": 17218,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "7312ec65-36a7-48f1-8254-0e1bf9e3debe",
+      "title": "",
+      "fullFile": "cypress\\e2e\\PV2\\prova2.cy.js",
+      "file": "cypress\\e2e\\PV2\\prova2.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ef4d5840-3bc0-4e0b-acf3-6ba9fd9b8b76",
+          "title": "Prova 2 testes",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "SingUp_sucess",
+              "fullTitle": "Prova 2 testes SingUp_sucess",
+              "timedOut": null,
+              "duration": 2234,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://www.demoblaze.com/index.html');\ncy.get('#signin2').click();\ncy.get('#sign-username').type(user[0].toString());\ncy.get('#sign-password').type(user[1].toString());\ncy.get('#signInModal > .modal-dialog > .modal-content > .modal-footer > .btn-primary').click();",
+              "err": {},
+              "uuid": "abdfebce-50b1-4ce0-bdb8-1b4a1226e5c5",
+              "parentUUID": "ef4d5840-3bc0-4e0b-acf3-6ba9fd9b8b76",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login_sucess",
+              "fullTitle": "Prova 2 testes Login_sucess",
+              "timedOut": null,
+              "duration": 2305,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://www.demoblaze.com/index.html');\ncy.get('#login2').click();\ncy.get('#loginusername').type(user[0].toString());\ncy.get('#loginpassword').type(user[1].toString());\ncy.get('#logInModal > .modal-dialog > .modal-content > .modal-footer > .btn-primary').click();\n//cy.get('#nameofuser').contains(user[0].toString()); // EM Teoria essea linha de comomando verificaria se o usuario esta logado, porem por alguma coisa quando eu coloco esta linha o usuaro \"nao existe\", mas em essa linha o usuario EXISTE",
+              "err": {},
+              "uuid": "942e73b2-edcc-4c69-9f8c-cb9cb462b637",
+              "parentUUID": "ef4d5840-3bc0-4e0b-acf3-6ba9fd9b8b76",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Add_to_cart_sucess",
+              "fullTitle": "Prova 2 testes Add_to_cart_sucess",
+              "timedOut": null,
+              "duration": 2831,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://www.demoblaze.com/index.html');\ncy.get(':nth-child(1) > .card > .card-block > .card-title > .hrefch').click();\ncy.get('.col-sm-12 > .btn').click;\ncy.on('window:alert', str => {\n  expect(str).to.equal(`Product added.`);\n});",
+              "err": {},
+              "uuid": "cb5b21c8-e9b0-4739-a64a-de351a87b29a",
+              "parentUUID": "ef4d5840-3bc0-4e0b-acf3-6ba9fd9b8b76",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Place_Order_falha",
+              "fullTitle": "Prova 2 testes Place_Order_falha",
+              "timedOut": null,
+              "duration": 6678,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://www.demoblaze.com/cart.html');\ncy.get('.col-lg-1 > .btn').click();\ncy.get('#name').type(user[0]);\ncy.get('#country').type(randomString());\ncy.get('#city').type(randomString());\ncy.get('#month').type(randomString());\ncy.get('#year').type(randomString());\ncy.get('#orderModal > .modal-dialog > .modal-content > .modal-footer > .btn-primary').click();\ncy.on('window:alert', str => {\n  expect(str).to.equal(`Please fill out Name and Creditcard.`);\n});\ncy.get('#orderModal > .modal-dialog > .modal-content > .modal-footer > .btn-secondary').click();\ncy.get('.col-lg-1 > .btn').click();\ncy.get('#country').type(randomString());\ncy.get('#city').type(randomString());\ncy.get('#month').type(randomString());\ncy.get('#year').type(randomString());\ncy.get('#orderModal > .modal-dialog > .modal-content > .modal-footer > .btn-primary').click();\ncy.on('window:alert', str => {\n  expect(str).to.equal(`Please fill out Name and Creditcard.`);\n});\ncy.get('#orderModal > .modal-dialog > .modal-content > .modal-footer > .btn-secondary').click();\ncy.get('.col-lg-1 > .btn').click();\ncy.get('#country').type(randomString());\ncy.get('#city').type(randomString());\ncy.get('#month').type(randomString());\ncy.get('#year').type(randomString());\ncy.get('#orderModal > .modal-dialog > .modal-content > .modal-footer > .btn-primary').click();\ncy.on('window:alert', str => {\n  expect(str).to.equal(`Please fill out Name and Creditcard.`);\n});",
+              "err": {},
+              "uuid": "64e8ae86-7558-4a33-b380-ad2e69a40101",
+              "parentUUID": "ef4d5840-3bc0-4e0b-acf3-6ba9fd9b8b76",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "abdfebce-50b1-4ce0-bdb8-1b4a1226e5c5",
+            "942e73b2-edcc-4c69-9f8c-cb9cb462b637",
+            "cb5b21c8-e9b0-4739-a64a-de351a87b29a",
+            "64e8ae86-7558-4a33-b380-ad2e69a40101"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 14048,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
