@@ -1,0 +1,6 @@
+1) Apenas uma suite de testes
+2) automatizados
+3) No meio da piramide, testes de integração
+4) São testes não funcionais
+5) Não
+6) Comparar com outra versão da api.
